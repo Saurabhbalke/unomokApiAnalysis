@@ -12,7 +12,7 @@ Step 2: Run `npm install cli-table` to install cli-table package. <br>
 
 ## Run CLI
 
-Run `node readFile.js` to execute the program
+Run `node readfile.js` to execute the program.
 
 
 ## Dependencies used
