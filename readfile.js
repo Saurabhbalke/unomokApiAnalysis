@@ -55,6 +55,10 @@ let responseTable = new Table({
   head: ['(index)', 'statusCode', 'count']
 });
 
+let endpointTable = new Table({
+  head: ['endpoint', 'count']
+});
+
 function createTable(statusCodeCounts) {
   for (const statusCode in statusCodeCounts) {
 
@@ -88,7 +92,10 @@ function createTable(statusCodeCounts) {
 // After reading all lines, print the results
 rl.on('close', () => {
   console.log("Endpoint Calls:");
-  console.table(endpointCounts);
+  for (const ele in endpointCounts) {
+    endpointTable.push([ele, endpointCounts[ele]]);
+  }
+  console.log(endpointTable.toString());
 
   console.log("\nAPI Calls per Minute:");
   console.table(apiCallsPerMinute);
